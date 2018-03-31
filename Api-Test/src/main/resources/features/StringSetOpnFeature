@@ -1,0 +1,45 @@
+@stringset @regression
+Feature: Success scenarios for upload , fetch and delete String set
+
+  @sanity @string
+  Scenario Outline: As a customer I want to Upload a set of strings
+    When the set of string <string1> , <string2>  uplloaded successfully
+    Then successful response returned and Id is created
+
+    Examples:
+      | string1  | string2        |
+      | cccc     |  ddddddd       |
+      | Hello     |  World        |
+
+  @sanity @string
+  Scenario: As a customer I want to list all uploaded string sets
+    When the set of string is being  fetched
+    Then successful response returned
+
+
+  @sanity @string
+  Scenario Outline: As a customer I want to list View the strings in a given set
+    When the set of string <string1> , <string2>  uplloaded successfully
+    When the set of string is being  fetched in a given set
+    Then successful response returned
+
+    Examples:
+      | string1   | string2        |
+      | Here       |  Finland       |
+      | Hello     |  World         |
+
+  @sanity @string
+  Scenario Outline: As a customer I want to Delete a given set of strings by giving its id
+    When the set of string <string1> , <string2>  uplloaded successfully
+    When Delete a given set of strings by giving its id
+    Then successful response returned
+
+    Examples:
+      | string1       | string2         |
+      | Here          |  Finland       |
+      | Hello         |  World         |
+      | abcdefghi     |  zrtuwkl        |
+
+
+
+
